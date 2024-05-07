@@ -31,7 +31,9 @@ class TaskManager:
         """
         This method writes the list of tasks to a file
         """
-        pass
+        with open("tasks.txt", "w") as file:
+            for task in self.tasks:
+                file.write(f"{task.description},{task.completed}\n")
 
 def main():
     task_manager = TaskManager()
